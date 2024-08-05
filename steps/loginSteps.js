@@ -43,3 +43,21 @@ Then("user login succussfully to the homepage", async function () {
   
   // await BrowserUtility.sleep(2);
 });
+
+
+When('user enters invalid name {string}', async function (string) {
+  // Write code here that turns the phrase above into concrete actions
+  await PageManager.loginPage.enterUsername(string);
+});
+
+When('user enters invalid password {string}', async function (string) {
+  // Write code here that turns the phrase above into concrete actions
+  await PageManager.loginPage.enterPassword(string);
+});
+
+Then('user should see a {string} error pop-up message', async function (string) {
+  // Write code here that turns the phrase above into concrete actions
+  await expect(PageManager.loginPage.loginErrorMessage).toHaveText(string);
+  // await BrowserUtility.verifyMessages(PageManager.loginPage.loginErrorMessage.innerText(), string);
+
+});
