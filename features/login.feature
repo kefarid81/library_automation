@@ -9,7 +9,7 @@ Feature: Login to the application
 
   Background:
     Given user is already on the login page
-  @lib-01-01  
+  @lib-01-01
   Scenario Outline: Verify users can login with valid credentials
     When user enters valid username '<user-type>'
     And user enters valid password '<user-type>'
@@ -18,7 +18,7 @@ Feature: Login to the application
     Examples:
       | user-type |
       | admin     |
-      | studen    |
+      | student   |
 
   @lib-01-02
   # TODO: Verify users can not login with invalid credentials
